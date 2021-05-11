@@ -538,7 +538,7 @@ h3 {
       .work-section .work-item:hover::before {
         opacity: 0.85; }
     .work-section .work-item::before {
-      background-image: url(../img/_src/icons/eye.png);
+      background-image: url("../img/icons/eye.png");
       background-repeat: no-repeat;
       background-position: 50% 50%;
       content: "";
