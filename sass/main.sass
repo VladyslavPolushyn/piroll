@@ -1,0 +1,427 @@
+@import "fonts"
+@import "libs"
+@import "magnific"
+@import "base"
+@import "vars"
+
+body
+  color: $text
+
+//for popup
+body.noscroll 
+  overflow-y: hidden !important
+
+button
+  border: none
+  outline: none
+
+input, textarea
+  box-sizing: border-box
+  outline: none
+  border: 1px solid transparent
+
+h1, h2, h3, h4, h5, h6
+  margin: 0
+  color: $header-text
+  font-family: 'montserat', sans-serif
+
+h2
+  font-size: 30px
+
+h3
+  font-size: 12px
+
+.grid
+  display: grid
+
+.main-header
+  min-height: 100vh
+  background-size: cover
+  background-position: center
+  // background-attachment: fixed (для паралакс эффекта)
+  .header-container
+    height: 100vh
+    padding-top: 40px
+  
+  a
+    color: $header-text
+    font-family: 'montserat', sans-serif
+    font-weight: 600
+    text-transform: uppercase
+    font-size: 12px
+    margin-left: 30px
+    &:hover
+      text-decoration: none
+      transition: .5s ease
+      color: $accent
+  h1
+    font-size: 38px
+  p
+    font-size: 18px
+  .slogan
+    padding: 0 50px
+    flex-direction: column
+    height: calc(100% - 29px) //29px - высота меню хедера. Для каждого перехода экрана высчитывать и в медиа менять
+
+    justify-content: center
+    p
+      margin: 37px auto
+    .contact-btn
+      width: 180px
+      background-color: $accent
+      color: #fff
+      text-transform: uppercase
+      font-size: 12px
+      font-family: 'montserat', sans-serif
+      font-weight: 500
+      padding: 23px 45px
+      // margin-top: 38px
+      outline: none
+      border: none
+      &:hover
+        cursor: pointer
+        transition: .5s ease
+        background-color: darken($accent, 5%)
+
+.about-section
+  padding: 100px 0
+  .row
+    margin: 0 auto
+    text-align: center
+    align-items: center
+    flex-direction: column
+    padding: 0 42px
+  p
+    padding: 38px 0
+
+.skills-section
+  background-color: $light
+  .skills-container
+    height: 100%
+    width: 50%
+  .skills-graph
+    padding: 160px 0
+    max-width: 500px
+    margin: 0 auto
+  h2
+    margin-bottom: 38px
+  h3
+    padding-bottom: 18px
+    margin-bottom: 40px
+    border-bottom: 3px solid #D9D9D9
+    width: 500px
+    &::after
+      max-width: 500px
+      position: absolute
+      padding-top: 18px
+      display: block
+      content: ''
+      border-bottom: 3px solid $accent
+    &.ui-ux
+      &::after
+        width: calc(500px * 0.75)
+    &.development
+      &::after
+        width: calc(500px * 0.90)
+    &.marketing
+      &::after
+        width: calc(500px * 0.65)
+  .skills-img
+    width: 50%
+    background-size: cover
+    background-position: center
+    // height: 100%
+    padding: 0
+    margin: 0
+    // width: 50%
+    // float: right
+    // position: absolute
+    // right: 0
+
+.statistic-section
+  background-color: $accent
+  padding: 100px 0
+  color: #fff
+  .statistic-item
+    img
+      float: left
+      margin-right: 28px
+    p
+      font-weight: 600
+      font-size: 18px
+      padding: 0
+      margin: 0 0 5px 0
+    span
+      font-family: 'montserat', sans-serif
+      font-size: 12px
+      text-transform: uppercase
+      font-weight: 500
+
+.work-section
+  grid-template-columns: repeat(4, 1fr)
+  .work-item
+    position: relative
+    background-size: cover
+    background-position: center
+    min-height: 42vh
+    // transition: .3s ease
+    &:hover
+      cursor: pointer
+      background-color: $dark
+      &::before
+        opacity: .85
+    &::before
+      background-image: url(../img/_src/icons/eye.png)
+      background-repeat: no-repeat
+      background-position: 50% 50%
+      // top: calc(50% - 15px)
+      // left: calc(50% - 24px)
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      background-color: $dark
+      opacity: 0
+      transition: opacity .5s ease
+    > *
+      z-index: 1
+  .load-more-btn
+    background-color: $light
+    grid-column: 1/5
+    color: $text
+    text-transform: uppercase
+    font-family: 'montserat', sans-serif
+    font-size: 12px
+    padding: 45px 0
+    transition: .2s ease
+    &:hover
+      cursor: pointer
+      background-color: darken($light, 15%)
+  .lazy-background
+    background-image: url("../img/_src/placeholder.jpg")
+  // .lazy-background.visible
+  //   &.one
+  //     background-image: url(img/_src/1.jpg)
+
+
+.process-section
+  padding: 100px 0
+  .work-description
+    margin: 0 auto
+    h2
+      margin-bottom: 40px
+    p
+      margin: 0
+  .work-video
+    margin-top: 100px
+    position: relative
+    padding-bottom: 56.25% /* задаёт высоту контейнера для 16:9 (если 4:3 — поставьте 75%) */
+    height: 0
+    overflow: hidden
+    iframe
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      border-width: 0
+      outline-width: 0
+
+.services-section
+  padding: 100px 0
+  padding-bottom: calc(100px - 57px)
+  background-color: $light
+  .service-item
+    margin-bottom: 57px
+    padding: 0 30px
+  h3
+    text-transform: uppercase
+    margin: 25px 0 18px 0
+  p
+    margin: 0
+
+.testimonials-section
+  color: #fff
+  background-color: $accent
+  padding: 180px 0
+  padding-bottom: calc(180px - 110px)
+  .owl-carousel
+    width: 100%
+    overflow: hidden
+  .owl-item
+    float: left
+    &:hover
+      cursor: default
+  .owl-nav
+    display: none
+  .owl-dot
+    background-color: transparent
+    &:hover
+      cursor: pointer
+    &.active
+      transform: scale(1.5)
+  .slide
+    margin: 0 auto
+    margin-bottom: 110px
+    p
+      font-family: 'montserat', sans-serif
+      font-size: 24px
+      margin: 0 0 37px 0
+    span
+      font-family: 'montserat', sans-serif
+      font-size: 12px
+      text-transform: uppercase
+
+.clients-section
+  padding: 65px 0
+
+.form-section
+  padding: 100px 0
+  background-color: $light
+  .form-header
+    margin: 0 auto
+    margin-bottom: 40px
+    h2
+      margin-bottom: 40px
+    p
+      margin: 0
+  .form-block
+    margin: 0 auto
+    .main-form
+      padding: 0 20px
+      text-align: justify
+      font-size: 15px
+      font-family: 'nunitosans', sans-serif
+      input, .comment
+        padding: 17px 15px
+        margin-bottom: 30px
+      input:focus, textarea:focus
+          border-color: $accent
+      .half-input
+        width: 320px
+      .comment
+        height: 170px
+        resize: none
+      .send-btn
+        display: block
+        text-transform: uppercase
+        color: #fff
+        background-color: $accent
+        font-family: 'montserat', sans-serif
+        font-size: 12px
+        width: 180px
+        height: 55px
+        margin: 0 auto
+        transition: .3s ease
+        &:hover
+          background-color: darken($accent, 10%)
+          cursor: pointer
+
+.main-footer
+  padding: 100px 0
+  background-color: $dark
+  color: #BDBDBD
+
+// BURGER MENU
+
+.b-a, .bar, .bar:before, .bar:after 
+  transition: all 0.25s
+  content: ""
+  position: absolute
+  // right: 15px
+  // left: 0
+  height: 6px
+  width: 30px
+  background-color: $text
+
+
+.menu-collapsed
+  display: none //media 768 block
+  transition: all 0.25s
+  position: fixed
+  top: 40px
+  right: 15px
+  height: 36px
+  width: 36px
+  z-index: 1
+  cursor: pointer
+
+.menu-collapsed ul 
+  transition: all 0s
+  position: fixed
+  left: -9000px
+
+
+.bar 
+  // position: fixed
+  // right: 15px
+  top: 8px
+
+.bar:before 
+  top: -8px
+
+.bar:after 
+  top: 8px
+
+
+.b-a-expanded, .menu-expanded .bar:before, .menu-expanded .bar:after 
+  transition: all 0.25s
+  top: -0px
+  right: 0
+
+
+.menu-expanded 
+  transition: all 0.25s
+  text-align: center
+  line-height: 2em
+  height: 100%
+  width: 100%
+  border-radius: 0px
+  top: 0
+  left: 0
+  background-color: rgba(0, 0, 0, 0.85)
+
+.menu-expanded ul
+  padding: 0
+  padding-top: 50px
+  list-style-type: none
+  transition: all 0s
+  position: relative
+  left: 0
+  z-index: 2
+
+.menu-expanded a 
+  transition: all 0.15s
+  text-decoration: none
+  font-size: 1em
+  padding: 5px
+  color: #fff
+  display: block
+  margin: 0
+
+.menu-expanded a:hover 
+  background-color: rgba(255, 255, 255, 0.8)
+  transition: all 0.15s
+  letter-spacing: 2px
+  color: #333
+  border: 1px solid rgba(255, 255, 255, 0.15)
+
+.menu-expanded .bar 
+  background-color: transparent
+  transition: all 0.25s
+  top: 48px
+  right: 15px
+
+.menu-expanded .bar:before 
+  transform: rotate(45deg)
+
+.menu-expanded .bar:after 
+  transform: rotate(-45deg)
+
+
+// END BURGER MENU
+
+
+@import "media"
